@@ -1,0 +1,52 @@
+{
+  "name": "bird-exercise",
+  "version": "0.1.0",
+  "description": "鳥の運動を観測する",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node ./dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "dev:watch": "ts-node-dev --respawn src/index.ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "eslintIgnore": [
+    "dist/*"
+  ],
+  "dependencies": {
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.0",
+    "twitter": "^1.7.1",
+    "twitter-lite": "^0.9.4"
+  },
+  "devDependencies": {
+    "@types/buffer-from": "^1.1.0",
+    "@types/node": "^13.9.1",
+    "@types/node-cron": "^2.0.3",
+    "@types/node-fetch": "^2.5.5",
+    "@types/twitter": "^1.7.0",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.6.2",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
+  }
+}
